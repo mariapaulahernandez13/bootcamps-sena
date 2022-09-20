@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class StoreBootcampRequest extends FormRequest
+class StoreReviewRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,12 +26,9 @@ class StoreBootcampRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required|min:5",
-            "description" => "required",
-            "website" => "required",
-            "phone" => "required",
-            "average_cost" => "numeric",
-            "user_id" => "exists:users,id",
+            "title" => "required",
+            "text" => "required",
+            "rating" => "numeric",
         ];
     }
 
